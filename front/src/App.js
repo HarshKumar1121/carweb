@@ -30,10 +30,15 @@ import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-// import About from "./pages/About";
-// import Features from "./pages/Features";
-import { AuthProvider } from "./context/AuthContext";
+import About from "./pages/About";
+import Features from "./pages/features";
+import { AuthProvider } from "./context/AuthContext"; 
+import AdminPanel from "./pages/AdminPanel";
+import Booking from "./pages/Bookings";
+// import CarDetails from "./pages/Bookings";
 import { Container } from "@mui/material";
+import CarDetails from "./pages/CarDetails";
+
 
 function App() {
   return (
@@ -45,8 +50,14 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* <Route path="/features" element={<Features />} /> */}
+            <Route path="/about" element={<About />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/car/:id" element={<CarDetails/>}/>
+            <Route path="/book/:id" element={<Booking/>}/>
+            <Route path="/admin" element={<AdminPanel/>}/>
+
+<Route path="/cars/:id" element={<CarDetails />} />
+
           </Routes>
         </Container>
       </BrowserRouter>

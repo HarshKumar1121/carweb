@@ -13,9 +13,26 @@
 
 
 
+// import axios from "axios";
+// const api = axios.create({
+//   baseURL: "http://localhost:4000",
+//   withCredentials: true,
+// });
+// export default api;
+
 import axios from "axios";
-const api = axios.create({
-  baseURL: "http://localhost:4000",
+
+export const API_URL = "http://localhost:4000";
+
+export const api = axios.create({
+  baseURL: API_URL,
   withCredentials: true,
 });
-export default api;
+
+export function authHeaders(token) {
+  return {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+}
